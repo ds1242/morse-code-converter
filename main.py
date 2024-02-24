@@ -25,9 +25,10 @@ def split_words_letters(array):
         converted_letters = []
         for j in word_arr:
             converted_letters.append(convert_to_morse(j))
-        print(converted_letters)
-
+        output.append(" ".join(converted_letters))
+    return output
 
 user_input  = input("Please enter a value to be converted to Morse Code: \n").split()
 
-split_words_letters(user_input)
+converted_string = "/".join(split_words_letters(user_input))
+print(converted_string)
