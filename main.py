@@ -14,13 +14,18 @@ MORSE_CODE_DICT = { 'A':'.-', 'B':'-...',
                     '?':'..--..', '/':'-..-.', '-':'-....-',
                     '(':'-.--.', ')':'-.--.-'}
 
-def convert_to_more(letter):
-    
+def convert_to_morse(letter):
+    morse_output = MORSE_CODE_DICT.get(letter.upper())
+    return morse_output
 
 def split_words_letters(array):
     output = []
     for i in array:
-        print(list(i))
+        word_arr = list(i)
+        converted_letters = []
+        for j in word_arr:
+            converted_letters.append(convert_to_morse(j))
+        print(converted_letters)
 
 
 user_input  = input("Please enter a value to be converted to Morse Code: \n").split()
